@@ -72,8 +72,43 @@
     section.page{ display:none; }
     section.page[data-print-active="true"]{ display:block !important; }
     .print-only{ display:block !important; }
+    .collapsible{ max-height:none !important; }
+    .fade-overlay{ display:none !important; }
   }
   .print-only{ display:none; }
+
+  .collapsible{
+    position:relative;
+    max-height:230px;
+    overflow:hidden;
+  }
+  .collapsible.expanded{
+    max-height:none;
+  }
+  .collapsible.expanded ~ .fade-overlay{
+    display:none;
+  }
+  .fade-overlay{
+    position:absolute;
+    left:0; right:0; bottom:34px;
+    height:60px;
+    pointer-events:none;
+  }
+  .expand-toggle{
+    text-align:center;
+    margin-top:6px;
+  }
+  .expand-btn{
+    background:none;
+    border:1px solid var(--border-default);
+    color:var(--text-heading);
+    font-size:13px;
+    font-weight:600;
+    padding:8px 20px;
+    border-radius:999px;
+    cursor:pointer;
+    font-family:inherit;
+  }
 </style>
 </head>
 <body>
@@ -157,6 +192,7 @@
         <h2 style="font-family:inherit; font-weight:700; font-size:24px; letter-spacing:-0.01em; color:var(--slate-900); margin:10px 0 2px;">保護者会資料</h2>
         <div style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">2026.9.5</div>
 
+        <div class="collapsible" id="collapse-hogosha-20260905">
         <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">1）チーム規約、チーム運営方針について</h3>
         <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
           <li class="searchable">当サークルは保護者運営のため保護者の協力が必要不可欠</li>
@@ -210,6 +246,11 @@
           <li class="searchable">東箱崎女子の保護者からの協力も検討</li>
           <li class="searchable">14時完全退館予定</li>
         </ul>
+        </div>
+        <div class="fade-overlay no-print" style="background:linear-gradient(to bottom, rgba(255,255,255,0), #fff);"></div>
+        <div class="expand-toggle no-print">
+          <button class="expand-btn" onclick="toggleCollapse('collapse-hogosha-20260905', this)">続きを見る ▼</button>
+        </div>
 
         <div class="no-print" style="margin-top:26px; padding-top:20px; border-top:1px solid var(--border-default); display:flex; flex-direction:column; align-items:flex-start; gap:12px;">
           <a href="#hogosha" style="font-size:13px; color:var(--text-muted);">▲ 保護者会一覧に戻る</a>
@@ -226,6 +267,7 @@
         </div>
         <h2 style="font-family:inherit; font-weight:700; font-size:24px; letter-spacing:-0.01em; color:var(--slate-900); margin:10px 0 20px;">あおば BLOOM HOOPS 運営方針</h2>
 
+        <div class="collapsible" id="collapse-hoshin">
         <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">1　チームの目標</h3>
         <p class="searchable" style="font-size:15px; line-height:1.9; color:var(--text-body); margin:10px 0;">バスケットボールを通して、「礼儀」「感謝の気持ち」「集中力」「協調性」「全力で取り組む力」を育みます。</p>
 
@@ -255,6 +297,11 @@
           <li class="searchable">移籍については、JBA及びPBAの規定に従います</li>
           <li class="searchable">移籍を行う場合は、役員会に申し出ることとします</li>
         </ol>
+        </div>
+        <div class="fade-overlay no-print" style="background:linear-gradient(to bottom, rgba(248,250,252,0), var(--slate-50));"></div>
+        <div class="expand-toggle no-print">
+          <button class="expand-btn" onclick="toggleCollapse('collapse-hoshin', this)">続きを見る ▼</button>
+        </div>
 
         <div class="no-print" style="margin-top:26px; padding-top:20px; border-top:1px solid var(--border-default); display:flex; flex-direction:column; align-items:flex-start; gap:12px;">
           <a href="#page-top" style="font-size:13px; color:var(--text-muted);">▲ 目次に戻る</a>
@@ -275,6 +322,7 @@
           このクラブは、社会教育の一環であり、学校教育の延長や学童保育ではないということを念頭に置いてください。あおば BLOOM HOOPSは青葉小学校・青葉公民館・本チーム運営者及び保護者・そして地域の方々のご協力のもと成り立っているチームです。ご理解の程、お願い申し上げます。
         </div>
 
+        <div class="collapsible" id="collapse-kiyaku">
         <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第1条　名称、所在地及び設立日</h3>
         <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
           <li class="searchable">当チームは、あおばBLOOM HOOPS（以下チーム）とし公民館サークルとする。設立日は2023年4月1日とする</li>
@@ -421,6 +469,11 @@
           <li class="searchable">コンプライアンス担当：古橋 修</li>
         </ul>
         <p class="searchable" style="font-size:13px; color:var(--text-muted); margin:10px 0;">2025年4月1日 制定／2026年4月1日 改正</p>
+        </div>
+        <div class="fade-overlay no-print" style="background:linear-gradient(to bottom, rgba(255,255,255,0), #fff);"></div>
+        <div class="expand-toggle no-print">
+          <button class="expand-btn" onclick="toggleCollapse('collapse-kiyaku', this)">続きを見る ▼</button>
+        </div>
 
         <div class="no-print" style="margin-top:26px; padding-top:20px; border-top:1px solid var(--border-default); display:flex; flex-direction:column; align-items:flex-start; gap:12px;">
           <a href="#page-top" style="font-size:13px; color:var(--text-muted);">▲ 目次に戻る</a>
@@ -435,8 +488,8 @@
           <span style="font-size:11px; font-weight:700; color:var(--slate-500); letter-spacing:0.16em; font-family:'Space Grotesk',sans-serif;">SECTION</span>
         </div>
         <h2 style="font-family:inherit; font-weight:700; font-size:24px; letter-spacing:-0.01em; color:var(--slate-900); margin:10px 0 16px;">体制図</h2>
-        <div style="overflow-x:auto; padding:12px 4px 8px;">
-        <div style="width:900px; margin:0 auto; display:flex; flex-direction:column; align-items:center;">
+        <div id="orgchartOuter" style="overflow:hidden; padding:12px 4px 8px;">
+        <div id="orgchartInner" style="width:900px; margin:0; display:flex; flex-direction:column; align-items:center; transform-origin:top left;">
 
           <div style="width:100%; background:var(--navy-950); border-radius:10px; padding:16px 12px; text-align:center;">
             <div style="font-size:18px; font-weight:700; color:#fff; letter-spacing:0.02em;">あおば BLOOM HOOPS</div>
@@ -537,7 +590,26 @@
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('.searchable').forEach(function(el){ el.dataset.orig = el.innerHTML; });
+  scaleOrgChart();
 });
+
+window.addEventListener('resize', function(){
+  clearTimeout(window._orgchartResizeT);
+  window._orgchartResizeT = setTimeout(scaleOrgChart, 150);
+});
+
+function scaleOrgChart(){
+  var outer = document.getElementById('orgchartOuter');
+  var inner = document.getElementById('orgchartInner');
+  if(!outer || !inner) return;
+  inner.style.transform = 'none';
+  var naturalWidth = 900;
+  var naturalHeight = inner.offsetHeight;
+  var availableWidth = outer.clientWidth;
+  var scale = Math.min(1, availableWidth / naturalWidth);
+  inner.style.transform = 'scale(' + scale + ')';
+  outer.style.height = (naturalHeight * scale) + 'px';
+}
 
 window.addEventListener('afterprint', function(){
   document.querySelectorAll('.page').forEach(function(el){ el.removeAttribute('data-print-active'); });
@@ -546,6 +618,19 @@ window.addEventListener('afterprint', function(){
 function handleSearch(value){
   var q = value.trim();
   var qLower = q.toLowerCase();
+  var active = !!q;
+
+  document.querySelectorAll('.collapsible').forEach(function(el){
+    if(active) el.classList.add('expanded');
+    else el.classList.remove('expanded');
+  });
+  document.querySelectorAll('.expand-toggle').forEach(function(wrap){
+    wrap.style.display = active ? 'none' : '';
+  });
+  document.querySelectorAll('.expand-btn').forEach(function(btn){
+    btn.textContent = '続きを見る ▼';
+  });
+
   document.querySelectorAll('.searchable').forEach(function(el){
     if(!q){
       el.style.display = '';
@@ -562,6 +647,13 @@ function handleSearch(value){
       el.style.display = 'none';
     }
   });
+}
+
+function toggleCollapse(id, btn){
+  var el = document.getElementById(id);
+  if(!el) return;
+  var expanded = el.classList.toggle('expanded');
+  btn.textContent = expanded ? '閉じる ▲' : '続きを見る ▼';
 }
 
 function printPage(pageId){
