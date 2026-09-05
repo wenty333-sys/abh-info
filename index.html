@@ -135,8 +135,8 @@
   <div id="introWrap" style="max-width:680px; margin:0 auto; padding:28px 20px 8px; border-bottom:1px solid var(--border-default);">
       <p class="searchable" style="margin:0 0 12px; font-size:14px; line-height:1.9; color:var(--slate-700);">このサイトは、あおば BLOOM HOOPS の保護者の皆さまに向けた情報閲覧サイトです。保護者会資料・運営方針・チーム規約・体制図など、チーム運営に関わる情報をまとめて掲載しています。</p>
       <p class="searchable" style="margin:0 0 12px; font-size:14px; line-height:1.9; color:var(--slate-700);">各情報項目はページ下部からPDFでダウンロードできるほか、上部の検索窓でキーワード検索も可能です。</p>
-      <p class="searchable" style="margin:0 0 12px; font-size:14px; line-height:1.9; color:var(--slate-700);">内容の正式版は各種原本（規約・運営方針等）となります。本ページは閲覧用としてご活用ください。また、体制図や規約には役員・指導者のお名前を含みますので、チーム関係者以外への転送・共有はお控えください。</p>
-      <p class="searchable" style="margin:0 0 28px; font-size:14px; line-height:1.9; color:var(--slate-700);">内容についてご不明な点があれば、役員（代表・コンプライアンス担当）までお気軽にお問い合わせください。新しくチームに加わった方にも、チームの理念や運営体制を知っていただく参考としてご覧いただけます。</p>
+      <p class="searchable" style="margin:0 0 12px; font-size:14px; line-height:1.9; color:var(--slate-700);">内容の正式版は各種原本（規約・運営方針等）となります。本ページは閲覧用としてご活用ください。また、体制図や規約には役員・指導者のお名前を含みますので、<strong style="color:#c0392b; font-weight:700;">チーム関係者以外への転送・共有はお控えください。</strong></p>
+      <p class="searchable" style="margin:0 0 28px; font-size:14px; line-height:1.9; color:var(--slate-700);"><strong style="font-weight:700;">内容についてご不明な点があれば、役員（代表・コンプライアンス担当）までお気軽にお問い合わせください。</strong><span style="text-decoration:underline;">新しくチームに加わった方にも、チームの理念や運営体制を知っていただく参考としてご覧いただけます。</span></p>
   </div>
 
   <div id="outerWrap" style="max-width:680px; margin:0 auto; padding:0 20px 24px;">
@@ -591,24 +591,55 @@
 document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('.searchable').forEach(function(el){ el.dataset.orig = el.innerHTML; });
   scaleOrgChart();
+  setupOrgChartObserver();
 });
+
+window.addEventListener('load', function(){
+  scaleOrgChart();
+  setTimeout(scaleOrgChart, 300);
+  setTimeout(scaleOrgChart, 1000);
+});
+
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(function(){
+    scaleOrgChart();
+    setTimeout(scaleOrgChart, 100);
+  });
+}
 
 window.addEventListener('resize', function(){
   clearTimeout(window._orgchartResizeT);
   window._orgchartResizeT = setTimeout(scaleOrgChart, 150);
 });
 
+function setupOrgChartObserver(){
+  var inner = document.getElementById('orgchartInner');
+  if(!inner || typeof ResizeObserver === 'undefined') return;
+  var lastHeight = 0;
+  var observer = new ResizeObserver(function(entries){
+    for (var i = 0; i < entries.length; i++) {
+      var h = entries[i].contentRect.height;
+      if (Math.abs(h - lastHeight) > 1) {
+        lastHeight = h;
+        scaleOrgChart();
+      }
+    }
+  });
+  observer.observe(inner);
+}
+
 function scaleOrgChart(){
   var outer = document.getElementById('orgchartOuter');
   var inner = document.getElementById('orgchartInner');
   if(!outer || !inner) return;
   inner.style.transform = 'none';
+  outer.style.height = 'auto';
   var naturalWidth = 900;
-  var naturalHeight = inner.offsetHeight;
+  var naturalHeight = inner.scrollHeight;
   var availableWidth = outer.clientWidth;
   var scale = Math.min(1, availableWidth / naturalWidth);
   inner.style.transform = 'scale(' + scale + ')';
-  outer.style.height = (naturalHeight * scale) + 'px';
+  outer.style.height = (naturalHeight * scale + 4) + 'px';
 }
 
 window.addEventListener('afterprint', function(){
