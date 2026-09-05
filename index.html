@@ -49,6 +49,9 @@
     #outerWrap{
       max-width:1040px !important;
     }
+    #introWrap{
+      max-width:1040px !important;
+    }
     #layout-grid{
       display:grid;
       grid-template-columns:220px minmax(0,1fr);
@@ -94,7 +97,7 @@
     </div>
   </header>
 
-  <div style="max-width:680px; margin:0 auto; padding:28px 20px 8px; border-bottom:1px solid var(--border-default);">
+  <div id="introWrap" style="max-width:680px; margin:0 auto; padding:28px 20px 8px; border-bottom:1px solid var(--border-default);">
       <p class="searchable" style="margin:0 0 12px; font-size:14px; line-height:1.9; color:var(--slate-700);">このサイトは、あおば BLOOM HOOPS の保護者の皆さまに向けた情報閲覧サイトです。保護者会資料・運営方針・チーム規約・体制図など、チーム運営に関わる情報をまとめて掲載しています。</p>
       <p class="searchable" style="margin:0 0 12px; font-size:14px; line-height:1.9; color:var(--slate-700);">各情報項目はページ下部からPDFでダウンロードできるほか、上部の検索窓でキーワード検索も可能です。</p>
       <p class="searchable" style="margin:0 0 12px; font-size:14px; line-height:1.9; color:var(--slate-700);">内容の正式版は各種原本（規約・運営方針等）となります。本ページは閲覧用としてご活用ください。また、体制図や規約には役員・指導者のお名前を含みますので、チーム関係者以外への転送・共有はお控えください。</p>
@@ -210,8 +213,7 @@
 
         <div class="no-print" style="margin-top:26px; padding-top:20px; border-top:1px solid var(--border-default); display:flex; flex-direction:column; align-items:flex-start; gap:12px;">
           <a href="#hogosha" style="font-size:13px; color:var(--text-muted);">▲ 保護者会一覧に戻る</a>
-          <button onclick="printPage('hogosha-20260905')" style="background:var(--slate-900); color:#fff; border:none; padding:12px 24px; border-radius:var(--radius-sm); font-size:14px; font-weight:700; cursor:pointer; font-family:inherit;">📄 このページをPDFで保存</button>
-          <a href="#pdfHelp" style="font-size:12px; color:var(--text-muted);">保存方法を見る ▶</a>
+          <a href="pdf/hogosha-20260905.pdf" download style="background:var(--slate-900); color:#fff; border:none; padding:12px 24px; border-radius:var(--radius-sm); font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; display:inline-block;">📄 PDFをダウンロード</a>
         </div>
       </section>
 
@@ -522,22 +524,6 @@
         <a class="no-print" href="#page-top" style="display:inline-block; margin-top:16px; font-size:13px; color:var(--slate-500);">▲ 目次に戻る</a>
       </section>
 
-      <details class="no-print" id="pdfHelp" style="border-top:1px solid var(--border-default); padding:6px 0 24px; margin-top:8px;">
-        <summary style="padding:16px 2px; font-weight:700; color:var(--text-heading); font-size:14px;">📄 PDFの保存方法（タップして開く）</summary>
-        <p class="searchable" style="font-size:13px; color:var(--text-muted); margin:0 2px 14px;">各ページ下部の「このページをPDFで保存」ボタンを押すと、印刷プレビュー画面が開きます。そこから以下の手順でPDFとして保存できます。</p>
-        <h4 style="margin:14px 2px 6px; font-size:13px; color:var(--text-heading); font-weight:700;">iPhone（Safari）の場合</h4>
-        <ol style="margin:4px 0 14px; padding-left:1.4em;">
-          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">ボタンを押すと印刷プレビューが表示されます</li>
-          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">プレビュー画面を2本指で広げる（ピンチアウト）と、PDFの拡大表示に切り替わります</li>
-          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">画面右上（または左上）の共有アイコンをタップし、「"ファイル"に保存」または「その他のアプリで開く」からLINEなどに送信できます</li>
-        </ol>
-        <h4 style="margin:14px 2px 6px; font-size:13px; color:var(--text-heading); font-weight:700;">Android（Chrome）の場合</h4>
-        <ol style="margin:4px 0 14px; padding-left:1.4em;">
-          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">ボタンを押すと印刷プレビューが表示されます</li>
-          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">上部の「プリンター」欄をタップし、「PDFに保存」を選択します</li>
-          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">右下の保存アイコンをタップし、保存先を選んで保存します（保存後にLINE等で送信可能）</li>
-        </ol>
-      </details>
     </div>
     </div>
   </div>
