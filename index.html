@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>あおば BLOOM HOOPS 保護者向け情報閲覧サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --slate-50:#f8fafc;
+    --slate-100:#f1f5f9;
+    --slate-400:#94a3b8;
+    --slate-500:#64748b;
+    --slate-700:#334155;
+    --slate-900:#0f172a;
+    --navy-700:#1c3a63;
+    --navy-950:#0b1730;
+    --blue-50:#eff6ff;
+    --blue-100:#dbeafe;
+    --success:#15803d;
+    --success-bg:#dcfce7;
+    --success-600:#16a34a;
+    --border-default:#e2e8f0;
+    --border-strong:#cbd5e1;
+    --text-heading:#0f172a;
+    --text-muted:#64748b;
+    --text-body:#334155;
+    --radius-sm:6px;
+    --radius-md:12px;
+    --font-family-mono:'Space Grotesk',monospace;
+    --link:#1c3a63;
+    --link-hover:#0f172a;
+  }
+  html,body{margin:0;-webkit-font-smoothing:antialiased;}
+  * { font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif; box-sizing:border-box; }
+  a{ color:var(--link); text-decoration:none; transition:background 120ms ease, color 120ms ease; }
+  a:hover{ color:var(--link-hover); }
+  nav#page-top a:hover, section.page a:hover{ color:var(--slate-500); }
+  button:hover{ filter:brightness(1.15); }
+  mark{ background:#fff3b0; color:var(--slate-900); font-weight:700; }
+  details > summary{ cursor:pointer; list-style:none; }
+  details > summary::-webkit-details-marker{ display:none; }
+
+  #layout-grid{ display:block; }
+  @media (min-width:900px){
+    #layout-grid{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr);
+      column-gap:48px;
+      align-items:start;
+    }
+    #layout-grid > .sidebar{
+      position:sticky;
+      top:24px;
+    }
+    #layout-grid .search-sticky{
+      position:static !important;
+    }
+  }
+
+  @media print{
+    header.site-header, .no-print{ display:none !important; }
+    section.page{ display:none; }
+    section.page[data-print-active="true"]{ display:block !important; }
+    .print-only{ display:block !important; }
+  }
+  .print-only{ display:none; }
+</style>
+</head>
+<body>
+
+<div style="background:#ffffff; min-height:100vh; color:var(--slate-700);">
+
+  <header class="site-header" style="padding:56px 24px 40px; border-bottom:1px solid var(--border-default); position:relative; overflow:hidden;">
+    <div style="max-width:680px; margin:0 auto; position:relative;">
+      <span style="display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:var(--slate-500); font-family:'Space Grotesk',sans-serif;">MINI BASKETBALL TEAM</span>
+      <h1 style="margin:14px 0 0; font-size:clamp(28px,5vw,38px); font-weight:700; color:var(--slate-900); letter-spacing:-0.01em; display:flex; align-items:center; gap:12px;">あおば <span style="font-family:'Space Grotesk',sans-serif; font-weight:700;">BLOOM HOOPS</span>
+        <svg viewBox="0 0 44 44" style="width:34px; height:34px; flex-shrink:0;" aria-hidden="true">
+          <circle cx="22" cy="22" r="19" fill="none" stroke="var(--slate-900)" stroke-width="2"/>
+          <path d="M3 22 H41" stroke="var(--slate-900)" stroke-width="1.3"/>
+          <path d="M22 3 V41" stroke="var(--slate-900)" stroke-width="1.3"/>
+          <path d="M8 8 Q22 22 8 36" fill="none" stroke="var(--slate-900)" stroke-width="1.3"/>
+          <path d="M36 8 Q22 22 36 36" fill="none" stroke="var(--slate-900)" stroke-width="1.3"/>
+          <text x="22" y="25.5" text-anchor="middle" font-size="9" font-weight="700" font-family="'Space Grotesk',sans-serif" fill="var(--slate-900)" stroke="#fff" stroke-width="3" paint-order="stroke">ABH</text>
+        </svg>
+      </h1>
+      <p style="margin:10px 0 0; font-size:14px; color:var(--slate-500);">保護者向け情報閲覧サイト</p>
+    </div>
+  </header>
+
+  <div style="max-width:680px; margin:0 auto; padding:28px 20px 8px; border-bottom:1px solid var(--border-default);">
+      <p class="searchable" style="margin:0 0 12px; font-size:14px; line-height:1.9; color:var(--slate-700);">このサイトは、あおば BLOOM HOOPS の保護者の皆さまに向けた情報閲覧サイトです。保護者会資料・運営方針・チーム規約・体制図など、チーム運営に関わる情報をまとめて掲載しています。</p>
+      <p class="searchable" style="margin:0 0 12px; font-size:14px; line-height:1.9; color:var(--slate-700);">各情報項目はページ下部からPDFでダウンロードできるほか、上部の検索窓でキーワード検索も可能です。</p>
+      <p class="searchable" style="margin:0 0 12px; font-size:14px; line-height:1.9; color:var(--slate-700);">内容の正式版は各種原本（規約・運営方針等）となります。本ページは閲覧用としてご活用ください。また、体制図や規約には役員・指導者のお名前を含みますので、チーム関係者以外への転送・共有はお控えください。</p>
+      <p class="searchable" style="margin:0 0 28px; font-size:14px; line-height:1.9; color:var(--slate-700);">内容についてご不明な点があれば、役員（代表・コンプライアンス担当）までお気軽にお問い合わせください。新しくチームに加わった方にも、チームの理念や運営体制を知っていただく参考としてご覧いただけます。</p>
+  </div>
+
+  <div id="outerWrap" style="max-width:680px; margin:0 auto; padding:0 20px 24px;">
+    <div id="layout-grid">
+
+    <div class="sidebar">
+
+      <div class="no-print search-sticky" style="position:sticky; top:0; z-index:20; background:#fff; padding:16px 0 12px; margin-bottom:8px; border-bottom:1px solid var(--border-default);">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="color:var(--slate-500); font-size:15px;">🔍</span>
+          <input oninput="handleSearch(this.value)" type="text" placeholder="キーワードで検索（例：ベンチ、部費、移籍）" style="flex:1; min-width:0; border:none; outline:none; font-size:15px; padding:4px 2px; background:transparent; color:var(--slate-700); font-family:inherit;"/>
+        </div>
+      </div>
+
+      <nav style="padding:20px 0 4px;" id="page-top">
+        <h2 style="font-size:11px; letter-spacing:0.14em; color:var(--slate-500); font-weight:700; margin:0 0 10px;">目次</h2>
+        <ul style="list-style:none; margin:0; padding:0;">
+          <li style="border-top:1px solid var(--border-default);"><a href="#hogosha" style="display:flex; align-items:center; gap:16px; padding:14px 2px; color:var(--slate-900); font-size:15px; font-weight:600;"><span style="font-family:var(--font-family-mono); font-size:12px; color:var(--slate-400,var(--slate-500));">01</span>保護者会（一覧）<span style="margin-left:auto; color:var(--slate-500); font-weight:400;">→</span></a></li>
+          <li style="border-top:1px solid var(--border-default);"><a href="#hoshin" style="display:flex; align-items:center; gap:16px; padding:14px 2px; color:var(--slate-900); font-size:15px; font-weight:600;"><span style="font-family:var(--font-family-mono); font-size:12px; color:var(--slate-500);">02</span>運営方針<span style="margin-left:auto; color:var(--slate-500); font-weight:400;">→</span></a></li>
+          <li style="border-top:1px solid var(--border-default);"><a href="#kiyaku" style="display:flex; align-items:center; gap:16px; padding:14px 2px; color:var(--slate-900); font-size:15px; font-weight:600;"><span style="font-family:var(--font-family-mono); font-size:12px; color:var(--slate-500);">03</span>チーム規約<span style="margin-left:auto; color:var(--slate-500); font-weight:400;">→</span></a></li>
+          <li style="border-top:1px solid var(--border-default); border-bottom:1px solid var(--border-default);"><a href="#soshiki" style="display:flex; align-items:center; gap:16px; padding:14px 2px; color:var(--slate-900); font-size:15px; font-weight:600;"><span style="font-family:var(--font-family-mono); font-size:12px; color:var(--slate-500);">04</span>体制図<span style="margin-left:auto; color:var(--slate-500); font-weight:400;">→</span></a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="content">
+
+      <!-- 保護者会：一覧 -->
+      <section class="page" data-page="hogosha-index" id="hogosha" data-screen-label="保護者会一覧" style="background:#fff; border-left:4px solid var(--slate-900); border-radius:0 var(--radius-md) var(--radius-md) 0; padding:40px 32px; margin-top:40px; scroll-margin-top:80px;">
+        <div style="display:flex; align-items:baseline; gap:14px;">
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--slate-900); line-height:1;">01</span>
+          <span style="font-size:11px; font-weight:700; color:var(--slate-500); letter-spacing:0.16em; font-family:'Space Grotesk',sans-serif;">SECTION</span>
+        </div>
+        <h2 style="font-family:inherit; font-weight:700; font-size:24px; letter-spacing:-0.01em; color:var(--slate-900); margin:10px 0 4px;">保護者会</h2>
+        <p class="searchable" style="font-size:14px; color:var(--text-muted); margin:0 0 18px;">過去の保護者会資料の一覧です。日付をタップすると、その回の詳細に移動します。</p>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="border-bottom:1px solid var(--border-default);"><a href="#hogosha-20260905" style="display:flex; align-items:center; gap:12px; padding:16px 4px; color:var(--text-heading); font-size:15px; font-weight:600;">2026.9.5 の保護者会<span style="font-size:11px; font-weight:700; color:var(--success); background:var(--success-bg); border-radius:999px; padding:3px 10px;">最新</span><span style="margin-left:auto; color:var(--text-muted);">›</span></a></li>
+          <li style="border-bottom:1px solid var(--border-default);"><a href="#" style="display:flex; align-items:center; gap:12px; padding:16px 4px; color:var(--text-muted); font-size:15px; font-weight:600;">2026.6.6 の保護者会<span style="font-size:11px; font-weight:700; color:var(--text-muted); background:var(--slate-100); border-radius:999px; padding:3px 10px;">更新予定</span><span style="margin-left:auto; color:var(--text-muted);">›</span></a></li>
+          <li style="border-bottom:1px solid var(--border-default);"><a href="#" style="display:flex; align-items:center; gap:12px; padding:16px 4px; color:var(--text-muted); font-size:15px; font-weight:600;">2026.3.7 の保護者会<span style="font-size:11px; font-weight:700; color:var(--text-muted); background:var(--slate-100); border-radius:999px; padding:3px 10px;">更新予定</span><span style="margin-left:auto; color:var(--text-muted);">›</span></a></li>
+          <li style="border-bottom:none;"><a href="#" style="display:flex; align-items:center; gap:12px; padding:16px 4px; color:var(--text-muted); font-size:15px; font-weight:600;">2025.12.6 の保護者会<span style="font-size:11px; font-weight:700; color:var(--text-muted); background:var(--slate-100); border-radius:999px; padding:3px 10px;">更新予定</span><span style="margin-left:auto; color:var(--text-muted);">›</span></a></li>
+        </ul>
+        <a class="no-print" href="#page-top" style="display:inline-block; margin-top:16px; font-size:13px; color:var(--text-muted);">▲ 目次に戻る</a>
+      </section>
+
+      <!-- 保護者会：2026.9.5 詳細 -->
+      <section class="page" data-page="hogosha-20260905" id="hogosha-20260905" data-screen-label="保護者会2026.9.5" style="background:#fff; border-left:4px solid var(--slate-900); border-radius:0 var(--radius-md) var(--radius-md) 0; padding:40px 32px; margin-top:20px; scroll-margin-top:80px;">
+        <div class="print-only"><h1 style="font-size:16pt; margin:0 0 4px;">あおば BLOOM HOOPS 保護者会資料</h1><p style="font-size:10pt; color:#555; margin:0;">2026.9.5</p></div>
+        <div style="display:flex; align-items:baseline; gap:14px;">
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; color:var(--slate-900); line-height:1;">01</span>
+          <span style="font-size:11px; font-weight:700; color:var(--slate-500); letter-spacing:0.16em; font-family:'Space Grotesk',sans-serif;">SECTION · DETAIL</span>
+        </div>
+        <h2 style="font-family:inherit; font-weight:700; font-size:24px; letter-spacing:-0.01em; color:var(--slate-900); margin:10px 0 2px;">保護者会資料</h2>
+        <div style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">2026.9.5</div>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">1）チーム規約、チーム運営方針について</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">当サークルは保護者運営のため保護者の協力が必要不可欠</li>
+          <li class="searchable">詳細は本ページ「②運営方針」「③チーム規約」を参照</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">2）当番業務について</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">詳細は別紙参照（当番表は別途配布）</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">3）試合の方針について</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">詳細は別紙参照</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">4）カップ戦、練習試合での服装、持ち物について</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">チームTシャツ、黒インナー、黒パスパン、黒ソックスに統一（ワンポイントOK）</li>
+          <li class="searchable">カップ戦、練習試合ではリバーシブルビブス着用（公式戦ではユニフォーム着用）</li>
+          <li class="searchable">クリップボード、2色ボールペンはスコアの練習や本番で使用</li>
+          <li class="searchable">バスケノートに使用するノートの種類は問わない</li>
+          <li class="searchable">氷嚢はアイシング用のアイスバッグ等でOK</li>
+          <li class="searchable">夏時期の水筒は大きめを準備（1.5ℓ以上）</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">5）ベンチでの保護者の役割</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">子どもたちの誘導、ベンチ内の荷物整理、チームプレートの準備、スコア準備・記入、応援や態度への声掛け、アクシデント（怪我や体調不良）への対処</li>
+          <li class="searchable">ベンチに入る保護者は1〜2名</li>
+          <li class="searchable">試合中にアクシデントが発生した場合の対応（ベンチ保護者だけで対応か、応援席から駆け付けるか）</li>
+          <li class="searchable">保護者がベンチに入る際、または応援席からベンチに駆け付ける際、必ず靴着用（スリッパやサンダルはNG）</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">6）試合前のアップについて</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">4Q残り3分前に完全に集合する</li>
+          <li class="searchable">アップ開始時間や時間配分は保護者側に一任する</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">7）練習試合（青葉小会場）での保護者の役割</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">駐車場誘導、ステージ上対応（茶菓の補充等）、トイレ見回り（汚染確認、トイレットペーパー確認）、空調確認（2時間毎に電源ON）</li>
+          <li class="searchable">他チームからのお問い合わせ等で対応に困った場合は、西見父まで</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">8）秋季リーグ（9/26 青葉小会場）について</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">9/26は男女が別会場（男子：馬出小、女子：青葉小）</li>
+          <li class="searchable">青葉小会場運営に低学年保護者の協力が必要（役割的には練習試合とほぼ同じ）</li>
+          <li class="searchable">東箱崎女子の保護者からの協力も検討</li>
+          <li class="searchable">14時完全退館予定</li>
+        </ul>
+
+        <div class="no-print" style="margin-top:26px; padding-top:20px; border-top:1px solid var(--border-default); display:flex; flex-direction:column; align-items:flex-start; gap:12px;">
+          <a href="#hogosha" style="font-size:13px; color:var(--text-muted);">▲ 保護者会一覧に戻る</a>
+          <button onclick="printPage('hogosha-20260905')" style="background:var(--slate-900); color:#fff; border:none; padding:12px 24px; border-radius:var(--radius-sm); font-size:14px; font-weight:700; cursor:pointer; font-family:inherit;">📄 このページをPDFで保存</button>
+          <a href="#pdfHelp" style="font-size:12px; color:var(--text-muted);">保存方法を見る ▶</a>
+        </div>
+      </section>
+
+      <!-- 運営方針 -->
+      <section class="page" data-page="hoshin" id="hoshin" data-screen-label="運営方針" style="background:var(--slate-50); border-left:4px solid var(--slate-900); border-radius:0 var(--radius-md) var(--radius-md) 0; padding:40px 32px; margin-top:40px; scroll-margin-top:80px;">
+        <div class="print-only"><h1 style="font-size:16pt; margin:0 0 4px;">あおば BLOOM HOOPS 運営方針</h1></div>
+        <div style="display:flex; align-items:baseline; gap:14px;">
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--slate-900); line-height:1;">02</span>
+          <span style="font-size:11px; font-weight:700; color:var(--slate-500); letter-spacing:0.16em; font-family:'Space Grotesk',sans-serif;">SECTION</span>
+        </div>
+        <h2 style="font-family:inherit; font-weight:700; font-size:24px; letter-spacing:-0.01em; color:var(--slate-900); margin:10px 0 20px;">あおば BLOOM HOOPS 運営方針</h2>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">1　チームの目標</h3>
+        <p class="searchable" style="font-size:15px; line-height:1.9; color:var(--text-body); margin:10px 0;">バスケットボールを通して、「礼儀」「感謝の気持ち」「集中力」「協調性」「全力で取り組む力」を育みます。</p>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">2　チームの基本姿勢</h3>
+        <ol style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">日本バスケットボール協会（JBA）及び福岡県バスケットボール協会（PBA）が定める各種規定等を順守します</li>
+          <li class="searchable">選手の人格と個性を尊重します</li>
+          <li class="searchable">暴言、罵声、選手を傷心させる言動等を本意，不本意に関わらず慎み，品格をもって指導にあたります</li>
+          <li class="searchable">ルールを守る，審判に従う，相手をリスペクトするなどフェアプレイ精神を育てます</li>
+          <li class="searchable">勝利を「目的」とせず，勝利は全ての選手が共有し合う「目標」とし，バスケットボールを楽しいと感じさせる「手段」と考えます</li>
+          <li class="searchable">末永くバスケットボールを愛する気持ちを持たせることを指導の第一目的とし，全ての選手に等しく精力を傾け，大人（指導者）の自己満足と自身の欲求達成の為の行動を否定します</li>
+          <li class="searchable">無限の可能性を秘めた大切な選手を授かる意識を常に持ち，けがや故障の予防安全と健康管理に万全を期します</li>
+          <li class="searchable">コミュニケーションを取りながら公平で民主的なチーム運営を心掛けます</li>
+          <li class="searchable">基本を忠実に選手の技術向上に全力を傾けます</li>
+          <li class="searchable">感謝の気持ちと礼儀作法を大切にし、元気で健やかな選手の育成に努めます</li>
+          <li class="searchable">指導者は選手の憧れになるような人格を磨きます</li>
+        </ol>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">3　本チームが対象とする児童について</h3>
+        <ol style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">本チームは、U12カテゴリー福岡市地区に在籍する児童を対象とします</li>
+          <li class="searchable">地区外の児童が入会を申し込んできた場合は、入会を承認するかどうか役員会で検討します</li>
+        </ol>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">4　移籍について</h3>
+        <ol style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">移籍については、JBA及びPBAの規定に従います</li>
+          <li class="searchable">移籍を行う場合は、役員会に申し出ることとします</li>
+        </ol>
+
+        <div class="no-print" style="margin-top:26px; padding-top:20px; border-top:1px solid var(--border-default); display:flex; flex-direction:column; align-items:flex-start; gap:12px;">
+          <a href="#page-top" style="font-size:13px; color:var(--text-muted);">▲ 目次に戻る</a>
+          <a href="pdf/unei-hoshin.pdf" download style="background:var(--slate-900); color:#fff; border:none; padding:12px 24px; border-radius:var(--radius-sm); font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; display:inline-block;">📄 原本PDFをダウンロード</a>
+        </div>
+      </section>
+
+      <!-- チーム規約 -->
+      <section class="page" data-page="kiyaku" id="kiyaku" data-screen-label="チーム規約" style="background:#fff; border-left:4px solid var(--slate-900); border-radius:0 var(--radius-md) var(--radius-md) 0; padding:40px 32px; margin-top:40px; scroll-margin-top:80px;">
+        <div class="print-only"><h1 style="font-size:16pt; margin:0 0 4px;">あおば BLOOM HOOPS 規約</h1></div>
+        <div style="display:flex; align-items:baseline; gap:14px;">
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--slate-900); line-height:1;">03</span>
+          <span style="font-size:11px; font-weight:700; color:var(--slate-500); letter-spacing:0.16em; font-family:'Space Grotesk',sans-serif;">SECTION</span>
+        </div>
+        <h2 style="font-family:inherit; font-weight:700; font-size:24px; letter-spacing:-0.01em; color:var(--slate-900); margin:10px 0 20px;">あおば BLOOM HOOPS 規約</h2>
+
+        <div class="searchable" style="border-left:2px solid var(--slate-900); background:var(--slate-50); padding:14px 18px; font-size:14px; line-height:1.85; color:var(--slate-700); margin:16px 0 24px;">
+          このクラブは、社会教育の一環であり、学校教育の延長や学童保育ではないということを念頭に置いてください。あおば BLOOM HOOPSは青葉小学校・青葉公民館・本チーム運営者及び保護者・そして地域の方々のご協力のもと成り立っているチームです。ご理解の程、お願い申し上げます。
+        </div>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第1条　名称、所在地及び設立日</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">当チームは、あおばBLOOM HOOPS（以下チーム）とし公民館サークルとする。設立日は2023年4月1日とする</li>
+          <li class="searchable">練習時間：原則 木・金 17:00〜19:00／土・日 9:30〜13:00</li>
+          <li class="searchable">練習場所：青葉小学校 体育館</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第2条　目的</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">バスケットを通して「礼儀」「感謝の気持ち」「集中力」「協調性」「全力で取り組む力」を育む</li>
+          <li class="searchable">当チームは、指導者と保護者が協力して、児童のバスケットボール技術の向上と健全育成な成長を図るために活動することを目的とする</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第3条　活動方針</h3>
+        <ol style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">部員を尊重して、チーム運営や各種活動を行う</li>
+          <li class="searchable">特定の政党や宗教には関係しない</li>
+          <li class="searchable">営利を目的とする行為は行わない</li>
+          <li class="searchable">目的に応じて他の社会教育機関と協力する</li>
+          <li class="searchable">部員、保護者、指導者は平等の権利と義務を有し、会の活動に積極的に参加する</li>
+          <li class="searchable">青葉公民館サークルの活動ルールを厳守し、公民館活動などに積極的に参加する</li>
+          <li class="searchable">保護者から指導者に対して指導方針、指導方法、ポジションを含む試合起用などを一任する</li>
+        </ol>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第4条　組織構成</h3>
+        <ol style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">当チームは趣旨に賛同して入部届を出した1〜6年までの児童、およびその保護者によって構成される保護者会、ならびに指導者によって組織する</li>
+          <li class="searchable">日本バスケットボール協会（JBA）および福岡県バスケットボール協会U-12部会（FBA）に加盟する</li>
+          <li class="searchable">JBAに加盟するにあたり、競技者・代表者・コンプライアンス担当者・指導者・審判の登録を行う</li>
+          <li class="searchable">代表者・コンプライアンス担当者の人選は指導者保護者による推薦とし、任期は1年とする。ただし再任は妨げない</li>
+          <li class="searchable">指導者は第5条の定義に基づき人選・承認されたものとする</li>
+          <li class="searchable">審判は指導者・保護者による推薦とし、指導者が兼任することも可能とする</li>
+          <li class="searchable">代表者、コンプライアンス担当者、指導者、審判に関してはボランティアとしてチームの活動をサポートする</li>
+        </ol>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第5条　指導者及び審判</h3>
+        <h4 style="font-size:15px; font-weight:700; color:var(--text-heading); margin:16px 0 6px;">（1）指導者</h4>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">指導者は、選手に直接指導を行う</li>
+          <li class="searchable">当チームの指導方針として、暴力・暴言による指導は行わない</li>
+          <li class="searchable">バスケット技術、指導法に関する情報収集や指導講習などに積極的に参加し研鑽に努める</li>
+          <li class="searchable">試合や練習中の事故防止に努める</li>
+        </ul>
+        <h4 style="font-size:15px; font-weight:700; color:var(--text-heading); margin:16px 0 6px;">（2）審判</h4>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">審判は、練習試合や公式戦において積極的に審判を担当する</li>
+          <li class="searchable">審判講習などに積極的に参加し研鑽を行う</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第6条　役員</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">役員：代表者1名、コンプライアンス担当1名、会計1名</li>
+          <li class="searchable">代表者は、保護者の代表として事務処理や保護者会のまとめを行う</li>
+          <li class="searchable">コンプライアンス担当は、チーム内の暴力・暴言・パワハラ撲滅や規則順守に関する連絡・調整を行う</li>
+          <li class="searchable">会計は、会費を収納し総会で決議された予算を執行し、決算事務及び活動資金の管理を行うとともに記録や文書等の保管を行い、任期は1年とする</li>
+          <li class="searchable">役員に欠員が生じた場合は、役員会で補充を検討する。任期は前任者の残任期間とする</li>
+          <li class="searchable">役員は、任期期間が終了しても後任者が決定するまではその職務を負う</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第7条　会議</h3>
+        <h4 style="font-size:15px; font-weight:700; color:var(--text-heading); margin:16px 0 6px;">（1）役員会</h4>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">役員を持って構成し、会の運営、部員の移籍確認、関係諸機関との連絡調整、緊急要件の審議決定を行う</li>
+        </ul>
+        <h4 style="font-size:15px; font-weight:700; color:var(--text-heading); margin:16px 0 6px;">（2）保護者会定期総会</h4>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">年に1度開催し、全保護者で構成される会である</li>
+          <li class="searchable">保護者2/3以上の出席（委任状を含む）で成立し、出席者の過半数以上で決定する</li>
+          <li class="searchable">活動計画、会計報告、役員改選、指導者の選考・依頼、規約の改廃、その他必要な事項を審議決定する</li>
+        </ul>
+        <h4 style="font-size:15px; font-weight:700; color:var(--text-heading); margin:16px 0 6px;">（3）臨時保護者会</h4>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">必要に応じて、役員が関係者（保護者や指導者など）を招集し開催する</li>
+          <li class="searchable">全会員の5分の1以上から要請があった場合、または役員会が必要と認めた場合に開催する</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第8条　入部、退部、休部及び移籍</h3>
+        <h4 style="font-size:15px; font-weight:700; color:var(--text-heading); margin:16px 0 6px;">（1）入部要件</h4>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">本人及び法定代理人（親権者・保護者または後見人）が本チームの目的に賛同し、かつ本規約を順守する旨を誓約する</li>
+          <li class="searchable">所定の入部申込書及び承諾書を提出し、部費を納入する</li>
+          <li class="searchable">入部時にチームが指定するスポーツ保険に加入する</li>
+          <li class="searchable">小学生（1〜6年生）</li>
+        </ul>
+        <h4 style="font-size:15px; font-weight:700; color:var(--text-heading); margin:16px 0 6px;">（2）退部及び休部</h4>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">退会や長期間の活動休止を希望するメンバーは、必ず役員へ申し出る</li>
+          <li class="searchable">休部の際の部費の支払いは発生しない。ただし、月に1度でもチーム活動に参加した場合は支払い義務が発生する</li>
+          <li class="searchable">団での欠席は支払い義務が発生する</li>
+          <li class="searchable">チーム役員は退会した者の個人情報（氏名、住所、電話番号など）を名簿から削除する</li>
+        </ul>
+        <h4 style="font-size:15px; font-weight:700; color:var(--text-heading); margin:16px 0 6px;">（3）移籍</h4>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">移籍者（退出・受入とも）および体験会の参加者については、指導者が①JBAの登録状況、②移籍元／先の指導者が認識しているか、の2点を必ず確認する</li>
+          <li class="searchable">他団体への移籍を希望する場合は移籍申請書を記入し役員へ提出し承認を得る</li>
+          <li class="searchable">当チームへの移籍希望者がいる場合、体験期間を設けて役員で移籍受け入れの検討を行う</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第9条　トラブル、事故</h3>
+        <p class="searchable" style="font-size:15px; line-height:1.9; color:var(--text-body); margin:10px 0;">チーム活動中の怪我については加入しているスポーツ保険制度にて補償対応される範囲内で行う。以下に関して、チームや役員、指導者はいかなる責任も一切負わないものとする。</p>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">チーム活動中（練習や試合など）の怪我・事故・トラブル等</li>
+          <li class="searchable">活動中の事故によるケガに関して応急措置以上の責任</li>
+          <li class="searchable">活動中の事故やケガによる治療費や修理費などの支払いの責任</li>
+          <li class="searchable">練習場・集合場所への往復途中における事故や怪我の責任</li>
+          <li class="searchable">チーム活動中（練習や試合など）に起きた服等の破損</li>
+          <li class="searchable">体験活動等入会する以前の補償はチームに対して損害賠償を請求しないものとする</li>
+          <li class="searchable">故意的ではなくメンバーに怪我や障害を与えた場合、与えた当事者は一切責任を負わないものとする</li>
+          <li class="searchable">施設内の事故などにより施設や設備、備品等を破損し修理が発生した場合、修理費の負担は事故を起こした者が行うものとする</li>
+          <li class="searchable">故意的に施設内の設備や備品などを破損した場合、修理費の負担は当人が行うものとする</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第10条　部費および会計</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">当チームに参加する場合は、部費を毎月収めなければならない</li>
+          <li class="searchable">部費の額は、総会で決定する</li>
+          <li class="searchable">その他、会の活動に必要な費用は臨時に集めることがある</li>
+          <li class="searchable">運営費は部費及びその他の収入をもってあて、総会で承認された予算に基づいて執行する</li>
+          <li class="searchable">決算は、会計監査を経て総会で承認を得なければならない</li>
+          <li class="searchable">会計年度は、4月1日から翌年の3月31日までとする</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第11条　会計監査</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">当チームの会計を監査するために、会計監査をおく</li>
+          <li class="searchable">会計監査は、総会において監査結果を報告する</li>
+          <li class="searchable">会計監査の任期及び選任方法は、役員の場合に準じる。会計監査は役員と兼任を認めない</li>
+        </ul>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第12条　規約の改正</h3>
+        <p class="searchable" style="font-size:15px; line-height:1.9; color:var(--text-body); margin:10px 0;">この規約は、総会の承認を得て改正する。なお、規約改正にあたっては役員会が改正原案を作成するものとする。</p>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第13条　会務先決</h3>
+        <p class="searchable" style="font-size:15px; line-height:1.9; color:var(--text-body); margin:10px 0;">当チームの会務上の遂行途上で緊急な事態が発生したとき、またはこの規約に記載されていない事が発生した場合は、当チームの規定に関わらず、代表者が先決処理することができる。その場合は、事後の役員会又は臨時保護者会で承認を得る。</p>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">第14条　解散・再編</h3>
+        <p class="searchable" style="font-size:15px; line-height:1.9; color:var(--text-body); margin:10px 0;">チーム運営者がチーム規約（本規約）の目的が遂行できないなど、目的通りのチーム活動が困難であると判断した場合はチームを解散、または再編するものとする。</p>
+
+        <h3 style="font-size:17px; font-weight:700; color:var(--text-heading); margin:28px 0 10px;">チーム運営者（男子）</h3>
+        <ul style="margin:8px 0 14px; padding-left:22px; font-size:15px; line-height:1.9; color:var(--text-body);">
+          <li class="searchable">コーチ：佛淵 正義</li>
+          <li class="searchable">アシスタントコーチ：西見 郁恵</li>
+          <li class="searchable">代表者：西見 信哉</li>
+          <li class="searchable">コンプライアンス担当：古橋 修</li>
+        </ul>
+        <p class="searchable" style="font-size:13px; color:var(--text-muted); margin:10px 0;">2025年4月1日 制定／2026年4月1日 改正</p>
+
+        <div class="no-print" style="margin-top:26px; padding-top:20px; border-top:1px solid var(--border-default); display:flex; flex-direction:column; align-items:flex-start; gap:12px;">
+          <a href="#page-top" style="font-size:13px; color:var(--text-muted);">▲ 目次に戻る</a>
+          <a href="pdf/kiyaku.pdf" download style="background:var(--slate-900); color:#fff; border:none; padding:12px 24px; border-radius:var(--radius-sm); font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; display:inline-block;">📄 原本PDFをダウンロード</a>
+        </div>
+      </section>
+
+      <!-- 体制図 -->
+      <section class="page" data-page="soshiki" id="soshiki" data-screen-label="体制図" style="background:var(--slate-50); border-left:4px solid var(--slate-900); border-radius:0 var(--radius-md) var(--radius-md) 0; padding:40px 32px; margin-top:40px; margin-bottom:24px; scroll-margin-top:80px;">
+        <div style="display:flex; align-items:baseline; gap:14px;">
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--slate-900); line-height:1;">04</span>
+          <span style="font-size:11px; font-weight:700; color:var(--slate-500); letter-spacing:0.16em; font-family:'Space Grotesk',sans-serif;">SECTION</span>
+        </div>
+        <h2 style="font-family:inherit; font-weight:700; font-size:24px; letter-spacing:-0.01em; color:var(--slate-900); margin:10px 0 16px;">体制図</h2>
+        <div style="overflow-x:auto; padding:12px 4px 8px;">
+        <div style="width:900px; margin:0 auto; display:flex; flex-direction:column; align-items:center;">
+
+          <div style="width:100%; background:var(--navy-950); border-radius:10px; padding:16px 12px; text-align:center;">
+            <div style="font-size:18px; font-weight:700; color:#fff; letter-spacing:0.02em;">あおば BLOOM HOOPS</div>
+          </div>
+
+          <div style="width:2px; height:20px; background:var(--border-strong);"></div>
+          <div style="position:relative; width:100%; height:20px;">
+            <div style="position:absolute; top:0; left:25%; width:50%; height:2px; background:var(--border-strong);"></div>
+            <div style="position:absolute; top:0; left:calc(25% - 1px); width:2px; height:20px; background:var(--border-strong);"></div>
+            <div style="position:absolute; top:0; left:calc(75% - 1px); width:2px; height:20px; background:var(--border-strong);"></div>
+          </div>
+
+          <div style="display:flex; gap:28px; width:100%;">
+
+            <!-- 男子チーム -->
+            <div style="flex:1; min-width:0; border:1px solid var(--blue-100); background:var(--blue-50); border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:10px;">
+              <div style="background:var(--navy-700); color:#fff; font-size:15px; font-weight:700; text-align:center; border-radius:8px; padding:10px;">男子チーム</div>
+              <div style="background:#fff; border:1px solid var(--border-default); border-radius:8px; padding:12px; text-align:center; font-size:14px; font-weight:600; color:var(--text-heading);">あおば BLOOM HOOPS</div>
+              <div style="display:flex; gap:10px;">
+                <div style="flex:1; min-width:0;">
+                  <div style="background:var(--navy-700); color:#fff; font-size:12px; font-weight:700; text-align:center; border-radius:6px 6px 0 0; padding:6px;">HC</div>
+                  <div style="background:#fff; border:1px solid var(--border-default); border-top:none; border-radius:0 0 6px 6px; padding:10px 6px; text-align:center; font-size:13px; color:var(--text-body);">佛淵 正義</div>
+                </div>
+                <div style="flex:1; min-width:0;">
+                  <div style="background:var(--navy-700); color:#fff; font-size:12px; font-weight:700; text-align:center; border-radius:6px 6px 0 0; padding:6px;">AC</div>
+                  <div style="background:#fff; border:1px solid var(--border-default); border-top:none; border-radius:0 0 6px 6px; padding:10px 6px; text-align:center; font-size:13px; color:var(--text-body);">西見 郁恵</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 女子チーム -->
+            <div style="flex:1; min-width:0; border:1px solid #f9c9dc; background:#fdeef4; border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:10px;">
+              <div style="background:#d6336c; color:#fff; font-size:15px; font-weight:700; text-align:center; border-radius:8px; padding:10px;">女子チーム</div>
+              <div style="background:#fff; border:1px solid var(--border-default); border-radius:8px; padding:10px 12px; text-align:center;">
+                <div style="font-size:14px; font-weight:600; color:var(--text-heading);">あおば東箱崎</div>
+                <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">（公民館サークル名：あおばエンジェルス）</div>
+              </div>
+              <div style="display:flex; gap:10px;">
+                <div style="flex:1; min-width:0;">
+                  <div style="background:#d6336c; color:#fff; font-size:12px; font-weight:700; text-align:center; border-radius:6px 6px 0 0; padding:6px;">HC</div>
+                  <div style="background:#fff; border:1px solid var(--border-default); border-top:none; border-radius:0 0 6px 6px; padding:10px 6px; text-align:center; font-size:13px; color:var(--text-body);">西見 郁恵</div>
+                </div>
+                <div style="flex:1; min-width:0;">
+                  <div style="background:#d6336c; color:#fff; font-size:12px; font-weight:700; text-align:center; border-radius:6px 6px 0 0; padding:6px;">AC</div>
+                  <div style="background:#fff; border:1px solid var(--border-default); border-top:none; border-radius:0 0 6px 6px; padding:8px 6px; text-align:center; font-size:13px; color:var(--text-body); line-height:1.5;">佛淵 正義<br/>重本 恭孝</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="position:relative; width:100%; height:20px;">
+            <div style="position:absolute; top:0; left:calc(25% - 1px); width:2px; height:10px; background:var(--border-strong);"></div>
+            <div style="position:absolute; top:0; left:calc(75% - 1px); width:2px; height:10px; background:var(--border-strong);"></div>
+            <div style="position:absolute; top:10px; left:25%; width:50%; height:2px; background:var(--border-strong);"></div>
+            <div style="position:absolute; top:10px; left:calc(50% - 1px); width:2px; height:10px; background:var(--border-strong);"></div>
+          </div>
+          <!-- 運営 -->
+          <div style="width:100%; background:var(--success-600); color:#fff; font-size:15px; font-weight:700; text-align:center; border-radius:8px; padding:10px; margin-top:0;">運営</div>
+          <div style="display:flex; gap:8px; width:100%; margin-top:10px;">
+            <div style="flex:1; min-width:0; border:1px solid var(--border-default); border-radius:8px; overflow:hidden;">
+              <div style="background:var(--slate-100); color:var(--text-heading); font-size:12px; font-weight:700; text-align:center; padding:6px 4px;">男子代表</div>
+              <div style="background:#fff; padding:10px 4px; text-align:center; font-size:12px; color:var(--text-body);">西見 信哉</div>
+            </div>
+            <div style="flex:1; min-width:0; border:1px solid var(--border-default); border-radius:8px; overflow:hidden;">
+              <div style="background:var(--slate-100); color:var(--text-heading); font-size:12px; font-weight:700; text-align:center; padding:6px 4px;">女子代表</div>
+              <div style="background:#fff; padding:10px 4px; text-align:center; font-size:12px; color:var(--text-body);">竹田 純哉</div>
+            </div>
+            <div style="flex:1; min-width:0; border:1px solid var(--border-default); border-radius:8px; overflow:hidden;">
+              <div style="background:var(--slate-100); color:var(--text-heading); font-size:12px; font-weight:700; text-align:center; padding:6px 4px;">会計</div>
+              <div style="background:#fff; padding:10px 4px; text-align:center; font-size:12px; color:var(--text-body);">池田 晴美</div>
+            </div>
+            <div style="flex:1; min-width:0; border:1px solid var(--border-default); border-radius:8px; overflow:hidden;">
+              <div style="background:var(--slate-100); color:var(--text-heading); font-size:12px; font-weight:700; text-align:center; padding:6px 4px;">コンプライアンス</div>
+              <div style="background:#fff; padding:10px 4px; text-align:center; font-size:12px; color:var(--text-body);">古橋 修</div>
+            </div>
+            <div style="flex:1; min-width:0; border:1px solid var(--border-default); border-radius:8px; overflow:hidden;">
+              <div style="background:var(--slate-100); color:var(--text-heading); font-size:12px; font-weight:700; text-align:center; padding:6px 4px;">体育館調整委員</div>
+              <div style="background:#fff; padding:8px 4px; text-align:center; font-size:12px; color:var(--text-body); line-height:1.5;">笹原 さやか<br/>野口 愛</div>
+            </div>
+          </div>
+
+        </div>
+        </div>
+        <a class="no-print" href="#page-top" style="display:inline-block; margin-top:16px; font-size:13px; color:var(--slate-500);">▲ 目次に戻る</a>
+      </section>
+
+      <details class="no-print" id="pdfHelp" style="border-top:1px solid var(--border-default); padding:6px 0 24px; margin-top:8px;">
+        <summary style="padding:16px 2px; font-weight:700; color:var(--text-heading); font-size:14px;">📄 PDFの保存方法（タップして開く）</summary>
+        <p class="searchable" style="font-size:13px; color:var(--text-muted); margin:0 2px 14px;">各ページ下部の「このページをPDFで保存」ボタンを押すと、印刷プレビュー画面が開きます。そこから以下の手順でPDFとして保存できます。</p>
+        <h4 style="margin:14px 2px 6px; font-size:13px; color:var(--text-heading); font-weight:700;">iPhone（Safari）の場合</h4>
+        <ol style="margin:4px 0 14px; padding-left:1.4em;">
+          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">ボタンを押すと印刷プレビューが表示されます</li>
+          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">プレビュー画面を2本指で広げる（ピンチアウト）と、PDFの拡大表示に切り替わります</li>
+          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">画面右上（または左上）の共有アイコンをタップし、「"ファイル"に保存」または「その他のアプリで開く」からLINEなどに送信できます</li>
+        </ol>
+        <h4 style="margin:14px 2px 6px; font-size:13px; color:var(--text-heading); font-weight:700;">Android（Chrome）の場合</h4>
+        <ol style="margin:4px 0 14px; padding-left:1.4em;">
+          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">ボタンを押すと印刷プレビューが表示されます</li>
+          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">上部の「プリンター」欄をタップし、「PDFに保存」を選択します</li>
+          <li class="searchable" style="font-size:13px; margin-bottom:6px; color:var(--text-body);">右下の保存アイコンをタップし、保存先を選んで保存します（保存後にLINE等で送信可能）</li>
+        </ol>
+      </details>
+    </div>
+    </div>
+  </div>
+
+  <footer style="max-width:680px; margin:16px auto 0; text-align:left; font-size:12px; color:var(--slate-500); padding:24px 20px 64px; border-top:1px solid var(--border-default);">
+    あおば BLOOM HOOPS 情報まとめページ（試作版）／内容は元資料を基に作成。最新情報は必ず原本もご確認ください。
+  </footer>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.searchable').forEach(function(el){ el.dataset.orig = el.innerHTML; });
+});
+
+window.addEventListener('afterprint', function(){
+  document.querySelectorAll('.page').forEach(function(el){ el.removeAttribute('data-print-active'); });
+});
+
+function handleSearch(value){
+  var q = value.trim();
+  var qLower = q.toLowerCase();
+  document.querySelectorAll('.searchable').forEach(function(el){
+    if(!q){
+      el.style.display = '';
+      el.innerHTML = el.dataset.orig;
+      return;
+    }
+    var text = el.textContent;
+    if(text.toLowerCase().indexOf(qLower) !== -1){
+      el.style.display = '';
+      var escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      var regex = new RegExp('(' + escaped + ')', 'gi');
+      el.innerHTML = el.dataset.orig.replace(regex, '<mark>$1</mark>');
+    } else {
+      el.style.display = 'none';
+    }
+  });
+}
+
+function printPage(pageId){
+  document.querySelectorAll('.page').forEach(function(el){
+    if(el.dataset.page === pageId) el.setAttribute('data-print-active', 'true');
+    else el.removeAttribute('data-print-active');
+  });
+  window.print();
+}
+</script>
+
+</body>
+</html>
+
